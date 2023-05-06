@@ -1,13 +1,12 @@
 package mainProject;
 
-public class Video implements gestioneLuminosita {
-    private String titolo;
+public class Video extends ElementoMultimediale implements gestioneLuminosita {
     public int l = 5;
-    public int durata;
+    private int durata;
     public int v = 5;
 
     public Video(String titolo, int durata) {
-        this.titolo = titolo;
+        super(titolo);
         this.durata = durata;
     }
 
@@ -31,11 +30,11 @@ public class Video implements gestioneLuminosita {
     }
 
     public void setTitolo(String titolo) {
-        this.titolo = titolo;
+        super.titolo = titolo;
     }
 
     public String getTitolo() {
-        return this.titolo;
+        return super.titolo;
     }
 
     public void setDurata(int durata) {
@@ -48,7 +47,7 @@ public class Video implements gestioneLuminosita {
 
     public void play(){
         for(int i=0;i<this.durata;i++){
-            System.out.print(this.titolo );
+            System.out.print("Titolo video: "+super.titolo );
             for (int j=0;j<this.l;j++){
                 System.out.print(" * ");
             }
@@ -60,6 +59,11 @@ public class Video implements gestioneLuminosita {
                 }
             }
         }
+    }
+
+    @Override
+    public String toString(){
+        return "Video = [ Titolo video: "+ super.titolo + ", durata: "+ this.durata + "min ]";
     }
 
 }
