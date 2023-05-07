@@ -10,23 +10,30 @@ public class Video extends ElementoMultimediale implements gestioneLuminosita {
         this.durata = durata;
     }
 
-    public void aumentaLuminosita() {
-        l++;
+    public Video(String titolo, int durata, int l, int v) {
+        super(titolo);
+        this.durata = durata;
+        this.l=l;
+        this.v=v;
     }
 
-    public void diminuisciLuminosita() {
-        l--;
+    public void aumentaLuminosita(int n) {
+        this.l+=n;
+    }
+
+    public void diminuisciLuminosita(int n) {
+        this.l-=n;
     }
     public int getLuminosita(){
         return this.l;
     }
 
-    public void aumentaVolume() {
-        v++;
+    public void aumentaVolume(int aumento) {
+        this.v+=aumento;
     }
 
-    public void diminuisciVolume() {
-        v--;
+    public void diminuisciVolume(int diminuisci) {
+        this.v-=diminuisci;
     }
 
     public void setTitolo(String titolo) {
@@ -46,6 +53,8 @@ public class Video extends ElementoMultimediale implements gestioneLuminosita {
     }
 
     public void play(){
+        
+
         for(int i=0;i<this.durata;i++){
             System.out.print("Titolo video: "+super.titolo );
             for (int j=0;j<this.l;j++){
@@ -63,7 +72,7 @@ public class Video extends ElementoMultimediale implements gestioneLuminosita {
 
     @Override
     public String toString(){
-        return "Video = [ Titolo video: "+ super.titolo + ", durata: "+ this.durata + "min ]";
+        return "Video = [ Titolo video: "+ super.titolo + ", durata: "+ this.durata + "min, luminosità: "+ this.l + ", volume: "+this.v +  " ]";
     }
 
 }

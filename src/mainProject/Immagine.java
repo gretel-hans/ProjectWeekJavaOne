@@ -6,12 +6,16 @@ public class Immagine extends ElementoMultimediale implements gestioneLuminosita
     public Immagine(String titolo){
         super(titolo);
     }
+    public Immagine(String titolo, int l){
+      super(titolo);
+      this.l=l;
+  }
 
-    public void aumentaLuminosita(){
-        l++;
+    public void aumentaLuminosita(int n){
+        l+=n;
     }
-    public void diminuisciLuminosita(){
-      l--;  
+    public void diminuisciLuminosita(int n){
+      l-=n;  
     }
     public int getLuminosita(){
         return this.l;  
@@ -32,6 +36,6 @@ public class Immagine extends ElementoMultimediale implements gestioneLuminosita
 
       @Override
       public String toString(){
-        return "Immagine = [ Titolo immmagine: "+this.titolo+ " ]";
+        return "Immagine = [ Titolo immmagine: "+this.titolo+ ", luminosità: " +this.l + " ]";
       }
 }

@@ -9,6 +9,12 @@ public class Audio extends ElementoMultimediale {
         this.durata = durata;
     }
 
+    public Audio(String titolo, int durata, int v){
+        super(titolo);
+        this.durata = durata;
+        this.v=v;
+    }
+
     public int getDurata(){
         return this.durata;
     }
@@ -16,11 +22,12 @@ public class Audio extends ElementoMultimediale {
         this.durata=durata;
     }
 
-    public void alzaVolume(){
-        v++;
+    public void alzaVolume(int aumento) {
+        this.v+=aumento;
     }
-    public void abbassaVolume(){
-        v--;
+
+    public void abbassaVolume(int diminuisci) {
+        this.v-=diminuisci;
     }
 
     public void play(){
@@ -38,7 +45,7 @@ public class Audio extends ElementoMultimediale {
 
 @Override
 public String toString(){
-return "Audio = [ Titolo Audio: "+ super.titolo + ", durata: " + this.durata + "min ]" ;
+return "Audio = [ Titolo Audio: "+ super.titolo + ", durata: " + this.durata + "min, volume: " + this.v + " ]" ;
 }
     
 }

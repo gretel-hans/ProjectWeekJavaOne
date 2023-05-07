@@ -1,7 +1,7 @@
 package mainProject;
 
 public interface gestioneLuminosita {
-    public void aumentaLuminosita();
-    public void diminuisciLuminosita();
+    public void aumentaLuminosita(int n);
+    public void diminuisciLuminosita(int n);
     public int getLuminosita(); 
 }
