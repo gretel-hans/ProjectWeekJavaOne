@@ -12,10 +12,10 @@ public class Immagine extends ElementoMultimediale implements gestioneLuminosita
   }
 
     public void aumentaLuminosita(int n){
-        l+=n;
+        this.l+=n;
     }
     public void diminuisciLuminosita(int n){
-      l-=n;  
+      this.l-=n;  
     }
     public int getLuminosita(){
         return this.l;  
