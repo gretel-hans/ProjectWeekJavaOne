@@ -1,9 +1,9 @@
 package mainProject;
 
 public class Video extends ElementoMultimediale implements gestioneLuminosita {
-    public int l = 5;
+    private int l = 5;
     private int durata;
-    public int v = 5;
+    private int v = 5;
 
     public Video(String titolo, int durata) {
         super(titolo);
